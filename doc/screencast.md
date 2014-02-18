@@ -10,14 +10,23 @@
     brew install toilet
 
     rm ~/bin/lein
+    mv ~/.lein /tmp
     rm -rf /tmp/any_directory
+    chsh
+    bash
+    reset
 
     # toilet -F border -F gay "Clojure basics"
     # cowsay -f turtle "Clojure basics"
 
-# Install leiningen
+# Setting the table
 
-    # Install leiningen, the only Clojure-specific tool you'll need
+    cowsay -f bud-frogs "Setting the table"
+
+## Install leiningen
+
+    # Download and install leiningen
+    # That's the only Clojure-specific tool you'll need
     links leiningen.org
     (Follow link to install)
     (Click download)
@@ -27,14 +36,13 @@
     chmod a+x ~/bin/lein
     lein
 
-# The REPL
+## The REPL
 
-    # I spend half of my Clojure time in the REPL.
+    # I spend half of my Clojure time in the REPL
     mkdir /tmp/any_directory
     cd /tmp/any_directory
     lein repl
     => ; Welcome to the REPL
-    => ; I spend half of my Clojure time here
     => ; It has tab-completion
     => *<Tab>c<Tab>l<Tab><Enter>
     => ; Search in history with C-r
@@ -67,14 +75,14 @@
     - `->`?
     - `(exit)` or C-d
 
-# Set up a project and test it
+## Set up a project and test it
 
     lein new foo
     cd foo
     tree
     lein test
 
-# clojure.test
+## clojure.test
 (Start with a split tmux, the upper half is taller, it's for the editor)
 Let's go back to leiningen
 
@@ -97,7 +105,7 @@ Let's go back to leiningen
     user=> (require 'foo.core-test :reload)
 
     
-# Testing with midje
+## Testing with midje
 
   - Add midje dependency `[midje "1.6.2"]`
   - Rewrite test
