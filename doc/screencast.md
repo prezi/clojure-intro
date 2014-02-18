@@ -5,26 +5,43 @@
     brew install tmux # terminal multiplexer
     brew install tree # directory listing
 
-  - Set up terminal to 2x80 = 160 wide
+    # To add fancy captions
+    brew install figlet
+    brew install toilet
+
+    rm ~/bin/lein
+    rm -rf /tmp/any_directory
+
+    # toilet -F border -F gay "Clojure basics"
+    # cowsay -f turtle "Clojure basics"
 
 # Install leiningen
 
-You'll need a terminal and an editor.  The only Clojure-specific tool
-you'll need is _leiningen_
-
-    - `links http://leiningen.org`
-    - Follow link to install
-    - Quit _links_
-    - Run `lein` to see the options
+    # Install leiningen, the only Clojure-specific tool you'll need
+    links leiningen.org
+    (Follow link to install)
+    (Click download)
+    `Esc -> v` (Save as)
+    (Enter `~/bin/lein`)
+    `q` (Quit)
+    chmod a+x ~/bin/lein
+    lein
 
 # The REPL
 
-I spend half of my Clojure time in the REPL.
-
-    - Run in any directory, you don't need a project
-    - Readline support, tab-completion, C-r to search in history
-    - Commands are functions: remember the parens
-    - `(+ 2 3)`
+    # I spend half of my Clojure time in the REPL.
+    mkdir /tmp/any_directory
+    cd /tmp/any_directory
+    lein repl
+    => ; Welcome to the REPL
+    => ; I spend half of my Clojure time here
+    => ; It has tab-completion
+    => *<Tab>c<Tab>l<Tab><Enter>
+    => ; Search in history with C-r
+    => <C-r>cl<Enter>
+    => (help)
+    => ; Always remember those lisp-y parens!
+    => (quit)
 
 # Clojure basics
 
