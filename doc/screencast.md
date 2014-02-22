@@ -5,6 +5,9 @@
     brew install tmux # terminal multiplexer
     brew install tree # directory listing
 
+    brew install sox # sound recording
+    brew install libogg
+
     # To add fancy captions
     brew install figlet
     brew install toilet
