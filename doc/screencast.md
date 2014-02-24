@@ -55,8 +55,58 @@
     => (quit)
 
 # Clojure basics
+(See also http://www.cis.upenn.edu/~matuszek/Concise%20Guides/Concise%20Clojure.html)
 
-(We are still in the REPL)
+    => ; What you'd expect
+    => 42
+    => "some text"
+    => [1 2 4]
+    => ["mixed vector" "of" 4 "entries"]
+    => {"eyes" 2, "fingers" 10}
+    => ; Call a function: (function arg1 arg2 ...)
+    => (- 5 3)
+    => (first [2 4 8])
+    => (max 0 (min 1 2))
+    => ; Define
+    => (def pi 3.14)
+    => pi
+    => (let [pi 3.1415926] pi)
+    => (let [r 2
+             pi 3.1415926]
+         (* r r pi))
+    => (let [a 1
+             dummy (println "interim" a)
+             a (* 2 a)]
+          a)
+    => (def xs [2 3 5 8])
+    => (count xs)
+    => (rest xs)
+    => (reverse xs)
+    => (take 2 xs)
+    => (drop 2 xs)
+    => (filter odd? xs)
+    => (remove odd? xs)
+    => (map inc xs)
+    => (apply max xs)
+    => (reduce + [1 2 3])
+    => ; lambda 
+    => (fn [x] (+ x 1))
+    => ((fn [x] (+ x 1)) 42)
+    => (def inc' (fn [x] (+ x 1)))
+    => (inc' 42)
+    => (map inc' [2 4])
+    => (defn avg [x y] (/ (+ x y) 2))
+    => avg
+    => (avg 3 5)
+    => (avg 3 5 1)
+
+    => ; The & sign denotes rest args
+    => (defn avg [& xs] (/ (reduce + xs) (count xs))) 
+    => (avg 3 5 1)
+
+    => (map #(+ % 1) [2 4]) ; shortcut
+    => ; comma is treated as whitespace, it's used to improve readability
+    => [1,,,2],,,
     
     - Everything is an expression
     - Comment
