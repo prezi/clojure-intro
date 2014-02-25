@@ -151,6 +151,7 @@
     => (assoc me :nose 1)
     => (assoc me :name "Jack the Ripper")
     => (assoc-in me [:name :family] "the Ripper")
+    => (assoc-in me [:name :family] "the Ripper")
     => (assoc-in me [:name first] "Jack")
 
     => ; namespaces

@@ -13,3 +13,22 @@ I tried playterm.org at last.  It uses plain old `ttyrec` which is good,
 but it doesn't handle colors, only black-and-white.  It doesn't handle
 backspace, but leaves weird characters instead.  No reference to its
 source.  No good at all, out of question.
+
+# "Coverpage" of a screencast
+
+I think it matters.  Remember to have it, for example with
+`cowsay` or `figlet`.  The order of steps is
+
+  1. Display cover
+  2. Start recording
+  3. Start actual performance
+
+# Length of a recording
+
+It may take longer than expected.  Have a way to estimate it.  A
+pageful (cca. 32 lines) of code takes 2-3 minutes to type in.
+
+It's also useful to think in terms parts of a presentation, like a
+full 10 minute screencast can have a number of "chapters".  You
+can separate chapters using some movie-style cut, for example a
+`reset`.
