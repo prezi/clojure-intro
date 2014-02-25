@@ -133,7 +133,7 @@
     => (avg 3 5 1)
 
     => ; deep structures
-    => (def me {:eyes 2, :fingers 20, :name {:first "Jack"}, :numbers [7 13]}
+    => (def me {:eyes 2, :fingers 20, :name {:first "Jack"}, :numbers [7 13]})
     => (get me :eyes)
     => (get me :tail)
     => (get me :tail :invisible)
