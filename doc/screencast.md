@@ -170,6 +170,8 @@
     => (ns foo.bar (:use clojure.set))
     => union
     => (union #{3 4} #{4 5})
+    => (ns foo.bar (:use [clojure.data :only [diff]]))
+    => (diff #{3 4 5} #{4 5 6})
 
 ## Set up a project and test it
 
