@@ -57,68 +57,99 @@
 # Clojure basics
 (See also http://www.cis.upenn.edu/~matuszek/Concise%20Guides/Concise%20Clojure.html)
 
-    => ; What you'd expect
+    => ; Data
     => 42
+    => 0.3333333
+    => 1/3
     => "some text"
+    => :keyword
+    => true
+    => false
+    => nil
     => [1 2 4]
-    => ["mixed vector" "of" 4 "entries"]
-    => {"eyes" 2, "fingers" 10}
-    => ; Call a function: (function arg1 arg2 ...)
-    => (- 5 3)
-    => (first [2 4 8])
-    => (max 0 (min 1 2))
-    => ; Define
+    => ["mixed vector" :of 4 "entries"]
+    => {:eyes 2, :fingers 20}
+    => {:lucky-numbers [3 7 9], :unlucky-numbers [4 13]}
     => (def pi 3.14)
     => pi
-    => (let [pi 3.1415926] pi)
-    => (let [r 2
-             pi 3.1415926]
-         (* r r pi))
-    => (let [a 1
-             dummy (println "interim" a)
-             a (* 2 a)]
-          a)
     => (def xs [2 3 5 8])
-    => (count xs)
+    => xs
+    => (let [local-pi pi] local-pi)
+    => (let [pi 3] pi)
+    => pi
+    => (let [local-pi 3
+             pi local-pi]
+         pi)
+    => pi
+
+    => ; Call a function: (function arg1 arg2 ...)
+    => (- 5 3)
+    => (max 0 (min 1 2))
+    => (= 3 4)
+    => (= {:eyes 2, :fingers 20} {:fingers 20, :eyes 2})
+    => (if true :truthy :FALSEY)
+    => (if false :truthy :FALSEY)
+    => (if nil :truthy :FALSEY)
+    => (if :anything-else :truthy :FALSEY)
+    => (if 42 :truthy :FALSEY)
+    => (if 0 :truthy :FALSEY)
+    => (if [] :truthy :FALSEY)
+    => (if {} :truthy :FALSEY)
+    => (when true :truthy)
+    => (when false :truthy)
+    => (when nil :truthy)
+    => xs
+    => (first xs)
     => (rest xs)
+    => (count xs)
     => (reverse xs)
     => (take 2 xs)
     => (drop 2 xs)
     => (filter odd? xs)
     => (remove odd? xs)
+    => (every pos? xs)
+    => (some even? xs)
     => (map inc xs)
     => (apply max xs)
     => (reduce + [1 2 3])
+
     => ; lambda 
     => (fn [x] (+ x 1))
     => ((fn [x] (+ x 1)) 42)
+    => (map (fn [x] (+ x 1)) [2 4])
     => (def inc' (fn [x] (+ x 1)))
     => (inc' 42)
     => (map inc' [2 4])
+    => (defn inc-simpler [x] (+ x 1))
+    => (inc-simpler 42)
     => (defn avg [x y] (/ (+ x y) 2))
     => avg
     => (avg 3 5)
     => (avg 3 5 1)
-
-    => ; The & sign denotes rest args
-    => (defn avg [& xs] (/ (reduce + xs) (count xs))) 
+    => (defn avg [& rest-args] (/ (reduce + rest-args) (count rest-args))) 
     => (avg 3 5 1)
 
-    => (map #(+ % 1) [2 4]) ; shortcut
-    => ; comma is treated as whitespace, it's used to improve readability
-    => [1,,,2],,,
-    
-    - Everything is an expression
-    - Comment
-    - Parens and postfix, AST
-    - Brackets and braces
-    - String, keyword, symbol
-        (first "str")
-        (first '(this is a list))
-        (first :kw)
-    - `let`
-    - `def`, `defn`
-    - `map`, `filter`, `reduce`
+    => ; deep structures
+    => (def me {:eyes 2, :fingers 20, :name {:first "Jack"}, :numbers [7 13]}
+    => (get me :eyes)
+    => (get me :tail)
+    => (get me :tail :invisible)
+    => (me :eyes)
+    => (get me :name)
+    => (get-in me [:name :first])
+    => (get-in me [:tail :no-NPE])
+    => (get-in me [:numbers 0])
+    => (get-in me [:numbers 2])
+    => (-> me :name)
+    => (-> me :name :first)
+    => (-> me :name :first first)
+    => (-> me :fingers inc)
+    => (-> me :fingers (- 2))
+    => (assoc me :nose 1)
+    => (assoc me :name "Jack the Ripper")
+    => (assoc-in me [:name :family] "the Ripper")
+    => (assoc-in me [:name first] "Jack")
+
     - `use`, `require`
         (require '[clojure.string :as string])
         (string/split "do me a favor" #" ") ; => ["do" "me" "a" "favor"]
