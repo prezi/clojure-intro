@@ -70,6 +70,9 @@
     => ["mixed vector" :of 4 "entries"]
     => {:eyes 2, :fingers 20}
     => {:lucky-numbers [3 7 9], :unlucky-numbers [4 13]}
+    => #{:set :of :keywords :of :keywords}
+    => #"regex.*"
+    => #"("
     => (def pi 3.14)
     => pi
     => (def xs [2 3 5 8])
@@ -150,14 +153,23 @@
     => (assoc-in me [:name :family] "the Ripper")
     => (assoc-in me [:name first] "Jack")
 
-    - `use`, `require`
-        (require '[clojure.string :as string])
-        (string/split "do me a favor" #" ") ; => ["do" "me" "a" "favor"]
-
-        (use 'clojure.test)
-        (is (= 3 (+ 2 2)))
-    - `->`?
-    - `(exit)` or C-d
+    => ; namespaces
+    => (def x 42)
+    => x
+    => (ns foo.bar)
+    => x
+    => (def x 999)
+    => (ns user)
+    => x
+    => (ns foo.bar (:require [clojure.string :as string]))
+    => (string/trim "  abc\n  ")
+    => (string/upper-case "abc")
+    => (string/split "jack, mary, john" #", *")
+    => (-> "  bookkeeper  " string/trim string/upper-case (string/split #"E+"))
+    => union
+    => (ns foo.bar (:use clojure.set))
+    => union
+    => (union #{3 4} #{4 5})
 
 ## Set up a project and test it
 
