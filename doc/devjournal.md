@@ -39,3 +39,8 @@ It takes longer, a lot longer.  Even if I knew quite some bit
 about Midje testing and I've used it for some time, it still
 doesn't work without me having to read and think about it.  So it
 may take even twice as much time.
+
+# Time to add final touches
+
+It may be only 10-15 minutes to write a short blog post, add links
+to related post(s).  Publish it to your team or coworkers.
