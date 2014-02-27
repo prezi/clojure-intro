@@ -32,3 +32,10 @@ It's also useful to think in terms parts of a presentation, like a
 full 10 minute screencast can have a number of "chapters".  You
 can separate chapters using some movie-style cut, for example a
 `reset`.
+
+# Writing on something that's not part of my daily routine
+
+It takes longer, a lot longer.  Even if I knew quite some bit
+about Midje testing and I've used it for some time, it still
+doesn't work without me having to read and think about it.  So it
+may take even twice as much time.
