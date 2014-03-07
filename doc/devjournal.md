@@ -50,3 +50,10 @@ to related post(s).  Publish it to your team or coworkers.
 It's hard to find one that has all the features I'd like to test.
 It could be either available online (and probably difficult to set
 up authentication with it), or downloadable and runnable easily.
+
+# Published
+
+The urls are:
+
+  - http://offcode.blogspot.hu/2014/02/clojure-from-not-knowing-it-to-testing.html
+  - http://offcode.blogspot.hu/2014/02/testing-with-clojuretest-and-midje.html
